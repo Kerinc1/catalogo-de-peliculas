@@ -1,0 +1,249 @@
+/* Estilos generales */
+.app-container {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(45deg, #3a0507, #696666);
+  min-height: 100vh;
+  color: #333;
+  
+
+}
+
+#root{
+  width: 100%;
+  
+
+}
+
+.app-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+/* Estilos para la lista de películas */
+.movie-list {
+  display: grid ;
+  grid-template-columns: repeat(4,1fr) ;
+  gap:20px;
+  place-items: center;
+  
+}
+
+/* Contenedor de la tarjeta de película */
+.movie-card {
+  width: 200px; /* Ancho fijo para las tarjetas */
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+  cursor: pointer;
+  margin: 15px;
+  
+}
+
+/* Efecto de zoom y sombra al pasar el ratón */
+.movie-card:hover {
+  transform: translateY(-10px); /* Mueve la tarjeta hacia arriba */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+}
+
+/* Estilo de la imagen de la película */
+.movie-image {
+  width: 100%; /* Ajusta el ancho al 100% del contenedor */
+  height: 300px; /* Altura fija */
+  object-fit: cover; /* Mantiene la relación de aspecto y recorta la imagen si es necesario */
+  border-bottom: 3px solid #f1f1f1; /* Línea separadora entre la imagen y el texto */
+  transition: transform 0.3s ease; /* Transición para el efecto hover */
+}
+
+/* Efecto de zoom en la imagen */
+.movie-card:hover .movie-image {
+  transform: scale(1.1); /* Escala la imagen al pasar el ratón */
+}
+
+/* Estilos para el título y género */
+.movie-card h3 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+
+/* Estilo para el texto de género */
+.movie-card p {
+  font-size: 1rem;
+  color: #777;
+  text-align: center;
+}
+
+/* footer */
+
+@keyframes spin-reel {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes move-film {
+  0% {
+    transform: translateX(-50px);
+  }
+  100% {
+    transform: translateX(50px);
+  }
+}
+
+@keyframes marquee {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.movie-footer {
+  background-color: #0c0c0c;
+  color: #fff;
+  padding: 40px 20px;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.footer-info {
+  flex: 1;
+  text-align: left;
+}
+
+.footer-info h3 {
+  font-size: 1.8rem;
+  color: #f39c12;
+  margin-bottom: 10px;
+  animation: marquee 1s infinite alternate ease-in-out;
+}
+
+.footer-info p {
+  font-size: 1rem;
+  color: #bbb;
+  margin-bottom: 15px;
+}
+
+.footer-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-info ul li {
+  margin: 5px 0;
+}
+
+.footer-info ul li a {
+  text-decoration: none;
+  color: #f39c12;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.footer-info ul li a:hover {
+  color: #e74c3c;
+}
+
+.footer-design {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 150px;
+}
+
+.film-reel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  animation: move-film 2s infinite alternate ease-in-out;
+}
+
+.reel {
+  width: 100px;
+  height: 100px;
+  border: 10px solid #f39c12;
+  border-radius: 50%;
+  background-color: #333;
+  position: relative;
+  animation: spin-reel 4s infinite linear;
+}
+
+.reel:before,
+.reel:after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: #f39c12;
+  border-radius: 50%;
+}
+
+.reel:before {
+  top: 25px;
+  left: 25px;
+}
+
+.reel:after {
+  top: 25px;
+  right: 25px;
+}
+
+.film {
+  width: 150px;
+  height: 20px;
+  background-color: #f39c12;
+  margin-top: 10px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.film:before,
+.film:after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #f39c12;
+  top: 0;
+  border-radius: 50%;
+}
+
+.film:before {
+  left: -30px;
+}
+
+.film:after {
+  right: -30px;
+}
+
+.footer-credit {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 20px;
+}
